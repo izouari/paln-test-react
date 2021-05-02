@@ -1,17 +1,16 @@
 import React from 'react'
 import { Box, Grid } from '@material-ui/core'
 
-const Collaborateur = (props) => {
+const Collaborateur = ({collaborateur}) => {
+
+    console.log('collaborateur', collaborateur)
     return (
         <>
             <Grid item xs={2}>
-                <div onClick={() => props.onClick(props.affectation.idCollaborateur)}>
+                <div>
                     <Box>
                         <div>
-                            {props.affectation.name}
-                        </div>
-                        <div>
-                            {props.affectation.idCollaborateur}
+                            {collaborateur.nom} -  {collaborateur.prenom}
                         </div>
                     </Box>
                 </div>

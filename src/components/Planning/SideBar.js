@@ -46,6 +46,9 @@ const useStyles = makeStyles(theme => ({
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
   },
+  tabTitle: {
+    margin: '0px -19px',
+  }
 }));
 
 const SideBar = () => {
@@ -66,9 +69,9 @@ const SideBar = () => {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-        <Tab label="Accueil" {...a11yProps(0)} />
-        <Tab label="Mon Planning" {...a11yProps(1)} />
-        <Tab label="Mon Equipe" {...a11yProps(2)} />
+        <Tab className={classes.tabTitle} label="Accueil" {...a11yProps(0)} />
+        <Tab className={classes.tabTitle} label="Mon Planning" {...a11yProps(1)} />
+        <Tab className={classes.tabTitle} label="Mon Equipe" {...a11yProps(2)} />
       </Tabs>
       
     </div>

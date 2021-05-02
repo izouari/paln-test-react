@@ -5,11 +5,19 @@
   "dependencies": {
     "@material-ui/core": "^4.5.1",
     "@material-ui/icons": "^4.5.1",
+    "lodash": "^4.17.21",
+    "normalizr": "^3.6.1",
+    "ramda": "^0.26.1",
+    "re-reselect": "^4.0.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-redux": "^7.1.1",
     "react-scripts": "3.2.0",
-    "redux": "^4.0.4"
+    "redux": "^4.0.4",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-observable": "^1.2.0",
+    "reselect": "^4.0.0",
+    "rxjs": "^6.6.6"
   },
   "scripts": {
     "start": "react-scripts start",

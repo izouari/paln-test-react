@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import Recherche from '../share/Recherche'
-import { Grid, Box } from '@material-ui/core'
-import PlanningHeader from '../PlanningHeader'
+import { Grid, Box, Button } from '@material-ui/core'
 import Collaborateur from './Collaborateur'
 import { affectationByCollab } from '../Model/AffectationByCollab'
 import PlanningDetail from './PlanningDetail'
 import { DAYS } from '../Model/Utils'
+import ModalAffectation from './ModalAffectation'
+import PlanningHeader from './PlanningHeader'
 
 
 const collaborateurs = []
@@ -44,14 +45,21 @@ const Planning = () => {
             copySelectedMatricule.push(selectedCollabMatricule)
         }
 
+        console.log('matricule selected is ', copySelectedMatricule)
         setSelectedMatricule(copySelectedMatricule)
-        console.log('matricule selected is ', selectedMatricule)
+        
     }
 
     iterateOverAffectation();
 
+    const addAffectation = () => {
+        console.log('addAffectation');
+    }
+
     return (
         <div>
+             <Button style={{backgroundColor: 'red'}} onClick={addAffectation}>Ajouter Affectation</Button>
+             <ModalAffectation/>
             <br />
             <Grid direction="row" container>
                 <Grid container>

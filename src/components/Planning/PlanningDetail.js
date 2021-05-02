@@ -2,13 +2,20 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { Grid } from '@material-ui/core';
-import Activite from './Activite';
+// import BaseCard from './BaseCard';
 import { DAYS } from '../Model/Utils'
 
 const useStyles = makeStyles(theme => ({
     root: {
-        padding: theme.spacing(3, 2),
+        padding: theme.spacing(4, 2),
     },
+
+    verticalLine: {
+        borderLeft: '6px dashed green',
+        height: 130,
+        position: 'absolute',
+    }
+
 }));
 
 const PlanningDetail = (props) => {
@@ -32,36 +39,26 @@ const PlanningDetail = (props) => {
                                 {
                                     DAYS.map(day => {
 
-                                        return props.affectation.affectationsMap.MONDAY &&
-                                         props.affectation.affectationsMap.MONDAY.map(activite => {
+                                        return props.affectation.affectationsMap[day] &&
 
-                                            return (
+                                            (<div>
                                                 <Grid container direction="column" xs spacing={1}>
-                                                    <Grid item xs>
-                                                        <Activite />
-                                                    </Grid>
-                                                    <Grid item xs>
-                                                        <Activite />
-                                                    </Grid>
-                                                    <Grid item xs>
-                                                        <Activite />
-                                                    </Grid>
-                                                    <Grid item xs>
-                                                        <Activite />
-                                                    </Grid>
+                                                    {
+                                                        props.affectation.affectationsMap[day].map(activite => {
+                                                            return (
+                                                                <Grid item xs>
+                                                                    {/* <BaseCard activite={activite} /> */}
+                                                                </Grid>
+                                                            )
+                                                        })
+                                                    }
+                                                    <div className={classes.verticalLine} />
                                                 </Grid>
-                                            )
-
-                                        })
-
-
-
+                                            </div>)
                                     })
                                 }
-
-
-
                             </Grid>
+
 
 
                         </Paper>
